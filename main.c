@@ -2,9 +2,9 @@
 #include "dummy.h"
 
 // Defines used to check if call is really coming from client
-#define VARIABLE_NAME L"Rarelys-Fatste"
-#define baseOperation 0x35
-#define COMMAND_MAGIC baseOperation * 0x22 * 0x05
+#define VARIABLE_NAME L"EatBigp-oopfit"
+#define baseOperation 0x17
+#define COMMAND_MAGIC baseOperation * 0x52 * 0x07
 
 /*
  *  https://www.guidgen.com
@@ -12,7 +12,7 @@
  */
 
 // Our protocol GUID (should be different for every driver)
-EFI_GUID ProtocolGuid = { 0x2fac7380, 0x0c4f, 0x4c04, {0xa1, 0x5c, 0xcf, 0x00, 0x94, 0x87, 0xed, 0x1b} };
+EFI_GUID ProtocolGuid = { 0x28086A91,0x2391,0x4ECD,{0x9E,0x31,0x59,0xE5,0xA0,0x23,0xE8,0xD5} };
 
 // VirtualAddressMap GUID (gEfiEventVirtualAddressChangeGuid)
 EFI_GUID VirtualGuid = { 0x13FA7698, 0xC831, 0x49C7, { 0x87, 0xEA, 0x8F, 0x43, 0xFC, 0xC2, 0x51, 0x96 } };
@@ -328,10 +328,9 @@ EFI_STATUS efi_main(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE* SystemTable)
     oQueryCapsuleCapabilities = (EFI_QUERY_CAPSULE_CAPABILITIES)SetServicePointer(&RT->Hdr, (VOID**)&RT->QueryCapsuleCapabilities, (VOID**)&HookedQueryCapsuleCapabilities);
     oQueryVariableInfo = (EFI_QUERY_VARIABLE_INFO)SetServicePointer(&RT->Hdr, (VOID**)&RT->QueryVariableInfo, (VOID**)&HookedQueryVariableInfo);
 
-    // Print confirmation text
 
-    Print(L"Did Some Shit On Blue.\n");
-    CHAR16* pos2 = L"Good Shat.\n";
+    Print(L"bRUH ITS FINE.\n");
+    CHAR16* pos2 = L"TrulyWorking.\n";
     Print(pos2);
     SetMem(fstr, ((ptr64)pos2 - (ptr64)fstr) + (68 * sizeof(short)), 0);
 
